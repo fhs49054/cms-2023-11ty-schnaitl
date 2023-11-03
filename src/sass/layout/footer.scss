@@ -1,0 +1,47 @@
+footer {
+    height: 6.8rem;
+    color: #FFFFFF;
+    background-color: $bggray;
+    padding: 15px $paddingright 0 calc($paddingleft + $paddingleft);
+
+    h4 {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        font-size: 1.3rem;
+        padding-top: 0.1rem;
+        font-weight: 100;
+
+    }
+
+    p {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        font-weight: 100;
+        font-size: 1rem;
+        padding-bottom: 0.5rem;
+        padding-top: 0.2rem
+    }
+
+    a {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        font-weight: 100;
+        color: $orange;
+        font-size: 1rem;
+        text-decoration: none;
+    }
+
+    @include breakpoint($desktop) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: $paddingleft;
+
+
+        p {
+            font-size: 0.8rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+        }
+
+    }
+}

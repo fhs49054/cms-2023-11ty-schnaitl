@@ -1,0 +1,53 @@
+@import "animation";
+
+
+@include breakpoint(0, $mobile) {
+
+    #hamburger {
+        margin: 11px 16px 0 0;
+    }
+
+
+    nav {
+        animation: slidein 0.5s ease-in-out forwards;
+        font-size: 1.2rem;
+        font-weight: 100;
+        padding: 0 16px;
+        width: 50%;
+        height: 52vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: $bggray;
+        right: 0;
+        position: absolute;
+
+        #close {
+            background-color: transparent;
+            background-image: url("../src/images/close.svg");
+            border: none;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding: 0;
+        }
+
+        ul {
+            padding: 20px 16px 100px 0;
+            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &.hidden {
+            display: none;
+
+        }
+
+        &.slideout {
+            animation: slideout 0.5s ease-in-out forwards;
+
+        }
+    }
+}

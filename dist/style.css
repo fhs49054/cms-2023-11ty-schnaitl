@@ -1,0 +1,800 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+ *    v2.0 | 20110126
+ *       License: none (public domain)
+ *       */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*html{
+    margin:0;
+    padding: 1rem;
+    background-color: black;
+    --black: #292929;
+    --buttonleft: 0.8rem;
+    --buttontop: 1.5rem;
+    --c-orange: #FFAD6E;
+  }
+  .btn:is(:link, :visited)
+  {
+    color: var(--black);
+  }
+  button, .btn {
+    background-color:transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    border-color: var(--c-orange);
+    border-style: solid;
+    border-width: 1px;
+    padding: var(--buttonleft) var(--buttontop);
+    text-transform: uppercase;
+      }
+  .buttonblack{
+    background-color:black;
+  }
+  .buttonwhite{
+    color: black;
+    background-color:white;
+  }
+  .buttonbig{
+   padding: calc(var(--buttonleft) * 2) calc(var(--buttontop) * 2);
+
+  }
+  button:hover{
+    background-color: #D5874C;
+  }
+  */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/source-sans-pro/SourceSansPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: bold;
+  font-weight: 600;
+  src: url("fonts/source-sans-pro/SourceSansPro-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: semi-bold;
+  font-weight: 500;
+  src: url("fonts/source-sans-pro/SourceSansPro-Semibold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 300;
+  src: url("fonts/source-sans-pro/SourceSansPro-It.otf") format("opentype");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: light;
+  font-weight: 100;
+  src: url("fonts/source-sans-pro/SourceSansPro-Light.otf") format("opentype");
+}
+.show {
+  display: block;
+  visibility: visible;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+@media (min-width: 0rem) and (max-width: 56.25rem) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media (min-width: 56.3125rem) {
+  :root {
+    font-size: 22px;
+  }
+  h2 {
+    padding-bottom: 0;
+  }
+}
+.button {
+  font-size: 0.8rem;
+  font-weight: 500;
+  height: fit-content;
+  width: fit-content;
+  color: #FFFFFF;
+  border-color: hsl(26, 86%, 69%);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.6em 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.button:hover {
+  background-color: hsl(26, 100%, 72%);
+}
+
+h1 {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+h1 span {
+  text-transform: none;
+  font-weight: 100;
+}
+
+h2 {
+  font-weight: 100;
+  height: fit-content;
+  font-size: 2rem;
+  width: 100%;
+  color: hsl(26, 62%, 57%);
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideout {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media (min-width: 0rem) and (max-width: 56.25rem) {
+  #hamburger {
+    margin: 11px 16px 0 0;
+  }
+  nav {
+    animation: slidein 0.5s ease-in-out forwards;
+    font-size: 1.2rem;
+    font-weight: 100;
+    padding: 0 16px;
+    width: 50%;
+    height: 52vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: hsl(0, 0%, 21%);
+    right: 0;
+    position: absolute;
+  }
+  nav #close {
+    background-color: transparent;
+    background-image: url("../src/images/close.svg");
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+  }
+  nav ul {
+    padding: 20px 16px 100px 0;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  nav.hidden {
+    display: none;
+  }
+  nav.slideout {
+    animation: slideout 0.5s ease-in-out forwards;
+  }
+}
+main {
+  font-family: "Source Sans Pro", sans-serif !important;
+}
+main h2 {
+  color: hsl(26, 62%, 57%);
+  padding-left: 1rem;
+  padding-bottom: 3.8rem;
+}
+main .super-headline {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-size: 0.8rem;
+  padding: 40px 1rem 0 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: hsl(0, 0%, 21%);
+}
+main h3 {
+  color: hsl(26, 100%, 72%);
+  font-size: 1.3rem;
+  font-weight: 100;
+  padding: 4em 0 0.5em 1rem;
+}
+
+@media (min-width: 0rem) and (max-width: 56.25rem) {
+  main h2 {
+    font-size: 1.5rem;
+  }
+  main p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 56.3125rem) {
+  main h3 {
+    font-size: 1.2rem;
+  }
+  main p {
+    font-size: 0.8rem;
+  }
+}
+#workshops {
+  font-family: "Source Sans Pro", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+}
+#workshops .level {
+  display: flex;
+  flex-direction: column;
+}
+#workshops .level .bg_icon {
+  background-color: hsl(0, 0%, 35%);
+  align-self: center;
+  border-style: hidden;
+  border-radius: 500px;
+  padding: 1.5rem;
+}
+#workshops .level img {
+  max-width: 100%;
+}
+#workshops .level .number {
+  position: absolute;
+  font-family: "Source Sans Pro", sans-serif !important;
+  align-self: center;
+}
+#workshops .level p {
+  line-height: 1.3;
+  padding: 0 1rem;
+  color: #FFFFFF;
+  font-weight: 50;
+}
+#workshops h2 {
+  padding-bottom: 2rem;
+}
+#workshops .level:last-child {
+  margin-bottom: 50px;
+}
+#workshops .button {
+  margin: 1.3rem 0 0 1rem;
+}
+#workshops a {
+  text-decoration: none;
+}
+#workshops blockquote {
+  font-family: "Source Sans Pro", sans-serif !important;
+  align-self: center;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-weight: 100;
+}
+
+@media (min-width: 0rem) and (max-width: 56.25rem) {
+  #workshops .level {
+    margin: 0 0 90px 0;
+    height: 21.5rem;
+    position: relative;
+  }
+  #workshops .level .bg_icon {
+    position: absolute;
+    width: 7rem;
+    height: 7rem;
+    z-index: 2;
+  }
+  #workshops .level .ws_text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: hsl(0, 0%, 21%);
+  }
+  #workshops .level .ws_block {
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 21%);
+  }
+  #workshops .level .quote {
+    align-self: center;
+    width: 55px;
+    height: 55px;
+    padding: 10px 0 5px 0;
+  }
+  #workshops .level img {
+    max-width: 100%;
+  }
+  #workshops .level .number {
+    font-size: 1.5rem;
+    align-self: center;
+    margin-left: 100px;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 84%);
+    color: hsl(26, 62%, 57%);
+    font-weight: 500;
+    border-radius: 100px;
+    padding: 1rem;
+    line-height: 1;
+    z-index: 1;
+  }
+  #workshops .level p {
+    line-height: 1.3;
+    padding: 0 1rem 1rem 1rem;
+    color: #FFFFFF;
+    font-weight: 100;
+  }
+  #workshops .level:last-child {
+    margin-bottom: 50px;
+  }
+  #workshops .button {
+    margin: 0 0 0 1rem;
+  }
+  #workshops a {
+    text-decoration: none;
+  }
+  #workshops blockquote {
+    align-self: center;
+    padding: 0.8em 0 1.2em 0;
+  }
+}
+@media (min-width: 56.3125rem) {
+  #workshops {
+    padding-bottom: 50px;
+  }
+  #workshops .super-headline {
+    padding-top: 4.5rem;
+  }
+  #workshops .button {
+    margin: 1rem 0;
+  }
+  #workshops h2 {
+    padding-bottom: 0;
+  }
+  #workshops h3 {
+    padding: 0 0 0.7em 0;
+  }
+  #workshops .bg_icon {
+    align-self: center;
+    width: 200px;
+    height: 200px;
+  }
+  #workshops .bg_icon img {
+    padding: 0.2em;
+  }
+  #workshops blockquote {
+    font-size: 1.3rem;
+  }
+  #workshops .quote {
+    width: 110px;
+    height: 110px;
+  }
+  #workshops .level {
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    width: 70%;
+    background-color: hsl(0, 0%, 21%);
+    margin: 50px 0 0 110px;
+    padding: 0;
+    position: relative;
+  }
+  #workshops .level p {
+    padding: 0 1em 1em 0;
+  }
+  #workshops .level .ws_text {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 50%;
+  }
+  #workshops .level .ws_block {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1em;
+    width: 30%;
+  }
+  #workshops .level .bg_icon {
+    order: 2;
+    margin: 10px;
+    border-radius: 500px;
+    padding: 1.4rem;
+  }
+  #workshops .level .number {
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100px;
+    font-size: 10rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 21%);
+    padding: 0;
+  }
+  #workshops .level .quote {
+    align-self: flex-end;
+  }
+  #workshops .level blockquote {
+    line-height: 1.3;
+    padding: 0 2em 1em 1em;
+    align-self: flex-end;
+  }
+  #workshops .level:nth-child(3) {
+    align-self: flex-end;
+    padding-left: 0;
+    margin-right: 1rem;
+  }
+  #workshops .level:nth-child(3) .number {
+    top: 0;
+    transform: translateY(-27.5%);
+  }
+  #workshops .level:nth-child(3) .bg_icon {
+    order: 2;
+  }
+  #workshops .level:nth-child(3) .ws_text {
+    order: 1;
+  }
+  #workshops .level:nth-child(3) .ws_block {
+    order: 3;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    padding-right: 0;
+  }
+  #workshops .level:nth-child(3) .quote {
+    align-self: flex-end;
+    position: unset;
+  }
+  #workshops .level:nth-child(3) blockquote {
+    align-self: flex-start;
+    padding: 1.5em 2em 1em 1em;
+  }
+  #workshops .level:last-child {
+    align-self: flex-start;
+  }
+  #workshops .level:last-child .bg_icon {
+    order: 1;
+  }
+  #workshops .level:last-child .number {
+    transform: translateY(-35.5%);
+  }
+  #workshops .level:last-child .ws_text {
+    order: 2;
+  }
+  #workshops .level:last-child .ws_block {
+    order: 3;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 0;
+  }
+  #workshops .level:last-child .quote {
+    align-self: flex-end;
+    position: unset;
+  }
+  #workshops .level:last-child blockquote {
+    padding: 1.5em 2em 1em 1em;
+  }
+}
+footer {
+  height: 6.8rem;
+  color: #FFFFFF;
+  background-color: hsl(0, 0%, 21%);
+  padding: 15px 1rem 0 2rem;
+}
+footer h4 {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-size: 1.3rem;
+  padding-top: 0.1rem;
+  font-weight: 100;
+}
+footer p {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 100;
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.2rem;
+}
+footer a {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 100;
+  color: hsl(26, 100%, 72%);
+  font-size: 1rem;
+  text-decoration: none;
+}
+@media (min-width: 56.3125rem) {
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+  }
+  footer p {
+    font-size: 0.8rem;
+  }
+  footer a {
+    font-size: 0.8rem;
+  }
+}
+
+header {
+  font-family: "Source Sans Pro", sans-serif !important;
+  height: 25rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #010101;
+  background-image: url("images/headerBackground.jpg");
+}
+header .button {
+  background-color: black;
+}
+header a {
+  font-family: "Source Sans Pro", sans-serif !important;
+  text-decoration: none;
+  color: #FFFFFF;
+  width: 75%;
+}
+header .show {
+  display: block;
+}
+
+@media (min-width: 0rem) and (max-width: 56.25rem) {
+  header {
+    background-image: url("images/header.jpg");
+    background-position-x: 70%;
+    background-position-y: 20%;
+    background-size: 110%;
+    background-color: black;
+    position: relative;
+  }
+  header #hamburger {
+    background-color: transparent;
+    background-image: url("images/burger.svg");
+    border: none;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+  }
+  header h1 {
+    padding: 0.7rem 1rem 0 1rem;
+  }
+  header .heading {
+    padding: 20vh 5vw 0 50vw;
+  }
+  header h2 {
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 56.3125rem) {
+  header {
+    background-size: 90%;
+    height: 85vh;
+    background-position-x: 80%;
+    background-position-y: 15%;
+    padding: 1rem 2rem 0 1rem;
+    background-repeat: no-repeat;
+  }
+  header #hamburger {
+    display: none;
+  }
+  header #close {
+    display: none;
+  }
+  header a {
+    width: 50%;
+    height: fit-content;
+    justify-content: center;
+  }
+  header .heading {
+    padding: 25vh 0 0 8vw;
+    width: 100%;
+  }
+  header h2 {
+    width: 48%;
+    font-size: 2.5rem;
+    padding-bottom: 1.3rem;
+  }
+  header nav {
+    display: block;
+    width: 50%;
+    height: fit-content;
+    font-weight: 500;
+    align-self: flex-end;
+    justify-content: flex-start;
+  }
+  header nav a {
+    text-decoration: underline;
+    color: hsl(26, 100%, 72%);
+    text-underline-offset: 0.3rem;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+  }
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 32px;
+    font-size: 0.8rem;
+    font-weight: 100;
+  }
+  header nav ul span {
+    text-transform: uppercase;
+  }
+}
+#about {
+  font-family: "Source Sans Pro", sans-serif !important;
+  background-color: hsl(23, 100%, 97%);
+  padding: 45px 0 50px 0;
+}
+#about .super-headline {
+  padding: 15px 0 0 1rem;
+  letter-spacing: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+#about h2 {
+  padding-bottom: 1rem;
+  color: hsl(26, 62%, 57%);
+}
+#about p {
+  font-weight: 100;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  padding: 0 1rem 1rem 1rem;
+  color: hsl(0, 0%, 21%);
+}
+#about p:last-child {
+  padding-bottom: 40px;
+}
+#about img {
+  width: 100%;
+}
+#about .button {
+  color: black;
+  margin: 0px 0 32px 1rem;
+}
+#about a {
+  text-decoration: none;
+}
+@media (min-width: 56.3125rem) {
+  #about {
+    display: flex;
+    flex-direction: row;
+    padding: 90px 1rem 80px 1rem;
+  }
+  #about img {
+    width: 48vw;
+    object-fit: cover;
+  }
+  #about .about_text {
+    width: 43vw;
+  }
+}
+
+#news {
+  display: flex;
+  flex-direction: column;
+}
+#news .first {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+#news .super-headline {
+  padding-top: 40px;
+  width: 100%;
+}
+#news h2 {
+  padding-top: 0.5em;
+  padding-bottom: 0;
+  width: 100%;
+}
+#news article {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 97%);
+  margin: 2rem 0 3rem 1rem;
+  color: hsl(0, 0%, 21%);
+  max-width: 330px;
+}
+#news article h3 {
+  color: hsl(26, 62%, 57%);
+  font-size: 1.3rem;
+  font-weight: 100;
+  padding: 8px 0 8px 16px;
+}
+#news article img {
+  height: 280px;
+  object-fit: cover;
+}
+#news article p {
+  font-weight: 50;
+  line-height: 1.5;
+  padding: 1.5rem 1rem 0.6rem 1rem;
+}
+#news article .button {
+  color: hsl(0, 0%, 21%);
+  margin: 16px 0 32px 1rem;
+}
+#news article a {
+  text-decoration: none;
+}
+#news article:last-child {
+  margin-right: 1rem;
+}
+@media (min-width: 56.3125rem) {
+  #news .super-headline {
+    padding-top: 80px;
+  }
+  #news h2 {
+    padding-top: 0;
+  }
+  #news article {
+    margin-top: 1rem;
+    max-width: 31vw;
+  }
+  #news article h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

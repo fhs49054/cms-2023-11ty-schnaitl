@@ -1,0 +1,138 @@
+header {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    height: 25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #010101;
+    background-image: url("images/headerBackground.jpg");
+
+    .button {
+        background-color: black;
+    }
+
+    a {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        text-decoration: none;
+        color: #FFFFFF;
+        width: 75%;
+    }
+
+    .show {
+        display: block;
+    }
+
+
+}
+
+@include breakpoint(0, $mobile) {
+    header {
+
+        background-image: url("images/header.jpg");
+        background-position-x: 70%;
+        background-position-y: 20%;
+        background-size: 110%;
+        background-color: black;
+        position: relative;
+
+
+        #hamburger {
+            background-color: transparent;
+            background-image: url("images/burger.svg");
+            border: none;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            background-repeat: no-repeat;
+        }
+
+
+        h1 {
+            padding: 0.7rem 1rem 0 1rem;
+        }
+
+        .heading {
+            padding: $headerpadding;
+
+        }
+
+        h2 {
+            padding-bottom: 1rem;
+        }
+
+
+    }
+}
+
+
+@include breakpoint($desktop) {
+
+    header {
+        background-size: 90%;
+        height: 85vh;
+        background-position-x: 80%;
+        background-position-y: 15%;
+        padding: 1rem 2rem 0 1rem;
+        background-repeat: no-repeat;
+
+        #hamburger {
+            display: none;
+        }
+
+        #close {
+            display: none;
+        }
+
+        a {
+            width: 50%;
+            height: fit-content;
+            justify-content: center;
+        }
+
+        .heading {
+            padding: $hdesktop;
+            width: 100%;
+
+        }
+
+        h2 {
+            width: 48%;
+            font-size: 2.5rem;
+            padding-bottom: 1.3rem;
+        }
+
+
+        nav {
+            display: block;
+            width: 50%;
+            height: fit-content;
+            font-weight: 500;
+            align-self: flex-end;
+            justify-content: flex-start;
+
+            a {
+                text-decoration: underline;
+                color: $orange;
+                text-underline-offset: 0.3rem;
+                font-weight: 500;
+                letter-spacing: 1.3px;
+
+            }
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                gap: 32px;
+                font-size: 0.8rem;
+                font-weight: 100;
+
+                span {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+}

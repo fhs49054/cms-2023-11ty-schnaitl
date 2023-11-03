@@ -1,0 +1,59 @@
+main {
+  font-family: 'Source Sans Pro', sans-serif !important;
+
+
+
+  h2 {
+    color: $darkorange;
+    padding-left: $paddingleft;
+    padding-bottom: 3.8rem;
+  }
+
+  .super-headline {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 0.8rem;
+    padding: 40px $paddingright 0 $paddingleft;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $bggray;
+
+  }
+
+  h3 {
+    color: $orange;
+    font-size: 1.3rem;
+    font-weight: 100;
+    padding: 4em 0 0.5em $paddingleft;
+
+  }
+
+
+  // allgemeine Style
+}
+
+@include breakpoint(0, $mobile) {
+  main {
+    h2 {
+      font-size: 1.5rem;
+
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include breakpoint($desktop) {
+  main {
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
+
+}

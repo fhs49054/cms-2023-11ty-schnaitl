@@ -1,0 +1,63 @@
+#about {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    background-color: $bgabout;
+    padding: 45px 0 50px 0;
+
+    .super-headline {
+        padding: 15px 0 0 $paddingleft;
+        letter-spacing: 0;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        padding-bottom: 1rem;
+        color: $darkorange;
+    }
+
+    p {
+        font-weight: 100;
+        line-height: 1.5;
+        letter-spacing: 0.03em;
+        padding: 0 1rem 1rem $paddingleft;
+        color: $bggray;
+    }
+
+    p:last-child {
+        padding-bottom: 40px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .button {
+        color: black;
+        margin: 0px 0 32px $paddingleft;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+
+    @include breakpoint($desktop) {
+        display: flex;
+        flex-direction: row;
+        padding: 90px $paddingright 80px $paddingleft;
+
+        img {
+            width: 48vw;
+            object-fit: cover;
+        }
+
+
+
+        .about_text {
+            width: 43vw;
+        }
+
+
+    }
+}

@@ -1,0 +1,65 @@
+// MAX-WIDTH CONTAINER SIZE
+$max-width: 1920;
+
+
+// BREAKPOINTS
+$mobile: 900;
+$desktop: $mobile + 1;
+
+
+// COLORS
+// $copy: ;
+// $bgcolor: ;
+$bggray: hsl(0, 0%, 21%);
+$primary: red;
+$bg2: hsl(0, 0%, 84%);
+$bgicons: hsl(0, 0%, 35%);
+$orange: hsl(26, 100%, 72%);
+$darkorange: hsl(26, 62%, 57%);
+$bgabout: hsl(23, 100%, 97%);
+$bgnews: hsl(0, 0%, 97%);
+$button: hsl(26, 86%, 69%);
+$headerpadding: 20vh 5vw 0 50vw;
+$paddingleft: 1rem;
+$paddingright: 1rem;
+$hdesktop: 25vh 0 0 8vw;
+
+/*html{
+    margin:0;
+    padding: 1rem;
+    background-color: black;
+    --black: #292929;
+    --buttonleft: 0.8rem;
+    --buttontop: 1.5rem;
+    --c-orange: #FFAD6E;
+  }
+  .btn:is(:link, :visited)
+  {
+    color: var(--black);
+  }
+  button, .btn {
+    background-color:transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    border-color: var(--c-orange);
+    border-style: solid;
+    border-width: 1px;
+    padding: var(--buttonleft) var(--buttontop);
+    text-transform: uppercase;
+      }
+  .buttonblack{
+    background-color:black;
+  }
+  .buttonwhite{
+    color: black;
+    background-color:white;
+  }
+  .buttonbig{
+   padding: calc(var(--buttonleft) * 2) calc(var(--buttontop) * 2);
+   
+  }
+  button:hover{
+    background-color: #D5874C;
+  }
+  */
