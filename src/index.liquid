@@ -102,7 +102,7 @@ title: Marcus G. Miller | Home
             {% assign news = collections.news | reverse %}
             {% for n in news limit:3 %}
             <article>
-                <h3><a href='{{ n.url }}'>{{ n.data.title }}</a></h3>
+                <h3>{{ n.data.title }}</h3>
                 <img src='images/{{ n.data.image }}' alt="Marcus performing at the Sydney dance festival 2022"
                     srcset="images/{{ n.data.smallimg }} 600w, images/{{ n.data.image }} 1000w"
                     sizes="(max-width: 400px) 100vw, (max-width: 1920px) 100vw">
